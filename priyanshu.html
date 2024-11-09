@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanshu Bahuguna | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right, #f4f4f9, #dbeafe);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+        header {
+            text-align: center;
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        /* Typing animation for the intro text */
+        .typing-text {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #e0e0e0;
+            animation: typing 3s steps(30, end), blink 0.7s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Section title styling with underline */
+        .section-title {
+            font-size: 2rem;
+            margin-top: 3rem;
+            color: #1e3a8a;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background-color: #2563eb;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+        }
+        /* Skills section styling */
+        #skills {
+            background-color: #eef2ff;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .skills-grid div {
+            background: linear-gradient(145deg, #2563eb, #3b82f6);
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skills-grid div:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        /* Achievements section styling */
+        #achievements {
+            background-color: #e0e7ff;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .achievements-grid div {
+            background-color: #cbd5e1;
+            color: #1e3a8a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .achievements-grid div:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        /* Contact section styling */
+        .contact-links img {
+            width: 28px;
+            margin-right: 8px;
+            vertical-align: middle;
+            transition: transform 0.3s;
+        }
+        .contact-links a {
+            font-size: 1.1rem;
+            color: #1e3a8a;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-links a:hover {
+            color: #2563eb;
+            text-decoration: underline;
+        }
+        .contact-links img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #1e3a8a;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Responsive grid for smaller screens */
+        @media (max-width: 600px) {
+            .skills-grid, .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Priyanshu Bahuguna</h1>
+            <p class="typing-text">Computer Science Engineering | AI & ML | Competitive Programming Enthusiast</p>
+        </header>
+
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div>C</div>
+                <div>C++</div>
+                <div>Java</div>
+                <div>Object-Oriented Programming (OOP)</div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+                <div>Finalist in Bug Buster competition</div>
+                <div>5-star coder in problem-solving on <a href="https://www.hackerrank.com/profile/pb5676" target="_blank" style="color: #2563eb; font-weight: bold;">HackerRank</a></div>
+                <div>Skill score in DSA test on <a href="https://www.codechef.com/users/long_whimsy_19" target="_blank" style="color: #2563eb; font-weight: bold;">CodeChef</a></div>
+                <div>750 rating on <a href="https://codeforces.com/profile/Priyanshu_Bahuguna" target="_blank" style="color: #2563eb; font-weight: bold;">Codeforces</a></div>
+                <div>LeetCode Profile: <a href="https://leetcode.com/u/J3DGDFWSIL/" target="_blank" style="color: #2563eb; font-weight: bold;">u/J3DGDFWSIL</a></div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-links">
+                <p><a href="https://www.instagram.com/8priyanshu8/" target="_blank"><img src="instagram_logo.png" alt="Instagram"> Instagram</a></p>
+                <p><a href="mailto:priyanshubahuguna438@gmail.com"><img src="gmail_logo.png" alt="Gmail"> Gmail</a></p>
+                <p><a href="https://www.linkedin.com/in/priyanshu-bahuguna-a5b081273/" target="_blank"><img src="linkedin_logo.png" alt="LinkedIn"> LinkedIn Profile</a></p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Priyanshu Bahuguna. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

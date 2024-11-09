@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Animation Boxes</title>
+    <style>
+        table img {
+            width: 80%; 
+            height: auto; 
+            object-fit: contain;
+        }
+        td {
+            width: 200px;
+            height: 350px; 
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            vertical-align: top;
+        }.image-container {
+            height: 40%; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            animation: movement 15s infinite alternate ease-in-out;
+        }
+        @keyframes movement{
+            0% {
+                background-size: 100%; 
+            }
+            50% {
+                background-size: 100%; 
+            }
+            75% {
+                background-size: 105%; 
+            }
+            100% {
+                background-size: 105%; 
+            }
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: #b6c3b6;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Animation on hover */
+        .box:hover {
+            transform: translateY(-10px) rotate(10deg); 
+            background-color: #626262; 
+            box-shadow: 0 10px 20px #edd9d900; 
+        }
+
+       
+        .box:hover .content {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .content {
+            transition: transform 0.3s ease;
+        }
+        p{
+            background-color: #626262;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+    <body>
+    <table border="0" width="100%" bgcolor="#2874F0" height="2%">
+        <tr>
+            <th align="center">
+                <img src="https://youthincmag.com/wp-content/uploads/2018/06/Ivy-Leagues.jpg">
+
+    <div class="container">
+       
+        <div class="box">
+            <div class="content"><img src="">
+        </div>
+        <div class="container">
+
+           
+                <div class="content"><img src="">
+            </div>
+
+
+        <div class="box">
+            <div class="content"><img src="https://th.bing.com/th/id/OIP.kpSuq_Jbw5nU78Po4_TlmwAAAA?w=400&h=300&rs=1&pid=ImgDetMain">
+    
+                <a href="https://www.harvard.edu/programs/">COURSES</a></div>
+        </div>
+
+
+         <div class="box">
+            <div class="content"><img src="https://th.bing.com/th/id/OIP.lnXEbXDcJ3n6lBdXkYL6hQHaFj?rs=1&pid=ImgDetMain">
+                <a href="https://www.yale.edu/academics/departments-programs">COURSES</a></div>
+        </div>
+
+         <div class="box">
+            <div class="content"><img src="https://i.pinimg.com/originals/51/01/82/510182ea8738eae5e60d1c5c59fba625.jpg">
+                <a href="https://home.dartmouth.edu/academics/departments-programs">COURSES</a></div>
+        </div>
+
+
+         <div class="box">
+            <div class="content"><img src="https://logodix.com/logo/318132.jpg">
+                <a href="https://courses.cornell.edu/">COURSES</a></div>
+        </div>
+
+         <div class="box">
+            <div class="content"><img src="https://wallpapercave.com/wp/wp10698137.png">
+                <a href="https://catalog.upenn.edu/courses/">COURSES</a></div>
+        </div>
+
+
+         <div class="box">
+            <div class="content"><img src="https://th.bing.com/th/id/R.32305efc5d5e9a3c44082c17e387b35c?rik=2BnqBShp16ZnzQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fprinceton-university-logo-vector-png-princeton-university-480.jpg&ehk=CzLZ%2bZcVY%2fXBtGV36sBooUjE0bAJmY%2f7XyA3Q0J2UE8%3d&risl=&pid=ImgRaw&r=0">
+                <a href="https://www.princetoncourses.com/">COURSES</a></div>
+        </div>
+        <div class="box">
+            <div class="content"><p>&copy;ALL RIGHTS RESERVED</p>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                 <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+
+   
+   
+
+</body>
+</html>

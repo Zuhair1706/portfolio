@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>LOGIN</title>
+    <style>
+        body {
+            background-image: url("https://cdn2.vectorstock.com/i/1000x1000/87/61/website-user-login-page-template-design-vector-36688761.jpg");
+            background-color: #f5f1f661;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-attachment: fixed;
+        } 
+        form {
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            background-color: #fff;
+            text-align: center;
+        }
+        label {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/submit-login">
+        <label for="userid">Enter Proper User ID:</label>
+        <input type="text" id="userid" name="ID" required>
+
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" name="pass" required>
+
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
+
+        

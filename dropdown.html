@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DROPDOWN</title>
+</head>
+<style> 
+    body {
+        background-color: #F1F3F6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('https://media.easemytrip.com/media/Blog/India/637329986932234248/637329986932234248S5PB8t.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-image: height 100%;
+        background-image: width 100%;
+    }
+    .dropbtn {
+        background-color: beige;
+        padding: 20px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    .dropbtn:hover {
+        background-color: #923fca;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        background-color: azure;
+        position: absolute;
+        min-width: 160px;
+        z-index: 1;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .dropdown:hover .dropbtn {
+        background-color: #2980B9;
+    }
+</style>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">LOCATIONS</button>
+        <div class="dropdown-content">
+            <a href="https://www.getyourguide.com/-l319/-tc1144/?cmp=bing&ad_id=77859371969326&adgroup_id=1245747323655203&bid_match_type=bb&campaign_id=710115235&device=c&feed_item_id=&keyword=location_id%3D319&loc_interest_ms=&loc_physical_ms=154883&match_type=b&msclkid=39487901306e153e8f8c1fd3e7572fd6&network=o&partner_id=CD951&target_id=dat-2329658981073728:aud-806259112&utm_adgroup=lc%3D319%3Achennai%7Cfn%3Df1%7Cagt%3Ddsa&utm_campaign=dc%3D55%3Ain%7Clc%3D319%3Achennai%7Cct%3Dcore%7Cln%3D29%3Aen%7Ctc%3Dall&utm_keyword=location_id%3D319&utm_medium=paid_search&utm_query=tourism%20in%20chennai&utm_source=bing">CHENNAI</a>
+            <a href="https://www.tripadvisor.in/SmartDeals-g304554-Mumbai_Maharashtra-Hotel-Deals.html">MUMBAI</a>
+            <a href="https://www.tripadvisor.in/Attractions-g297628-Activities-Bengaluru_Bangalore_District_Karnataka.html">BANGLORE</a>
+        </div>
+    </div>
+</body>
+</html>

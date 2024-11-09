@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+        <style>
+            body{
+                background-color: aquamarine;
+            }
+        </style>
+    </head>
+<body>
+    <title>Mobile number validation</title>
+    <script>
+        function validateinfo(number) {
+            const re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/g;
+            let result =number.match(re);
+        if(result )
+        {
+            alert("your number is correct");
+        }else {
+            validateinfo();
+                
+        }
+            
+        }
+        let n=prompt('enter the number in the fromat of xxx-xxx-xxxx');
+        validateinfo(n);
+        
+
+    
+
+    </script>
+    
+    
+
+    
+</body>
+</html>
+

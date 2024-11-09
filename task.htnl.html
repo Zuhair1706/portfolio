@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Simple JavaScript Programs</title>
+</head>
+<body>
+
+    <h2>Simple JavaScript Programs</h2>
+
+    
+    <h3>Sum of Two Numbers</h3>
+    <input type="number" id="num1" placeholder="Number 1">
+    <input type="number" id="num2" placeholder="Number 2">
+    <button onclick="calculateSum()">Sum</button>
+    <p id="sumResult"></p>
+
+    
+    <h3>Factorial</h3>
+    <input type="number" id="factorialInput" placeholder="Enter a number">
+    <button onclick="calculateFactorial()">Factorial</button>
+    <p id="factorialResult"></p>
+
+    <!-- Display Current Day and Time -->
+    <h3>Current Day and Time</h3>
+    <button onclick="displayDayAndTime()">Show</button>
+    <p id="dayTimeResult"></p>
+
+    <!-- Find Largest of Three Numbers -->
+    <h3>Largest of Three Numbers</h3>
+    <input type="number" id="numA" placeholder="Number 1">
+    <input type="number" id="numB" placeholder="Number 2">
+    <input type="number" id="numC" placeholder="Number 3">
+    <button onclick="findLargest()">Largest</button>
+    <p id="largestResult"></p>
+
+    <script>
+        function calculateSum() {
+            const num1 = +document.getElementById('num1').value;
+            const num2 = +document.getElementById('num2').value;
+            document.getElementById('sumResult').textContent = `Sum: ${num1 + num2}`;
+        }
+
+        function calculateFactorial() {
+            const num = +document.getElementById('factorialInput').value;
+            let factorial = 1;
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            document.getElementById('factorialResult').textContent = `Factorial: ${factorial}`;
+        }
+
+        function displayDayAndTime() {
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const currentDate = new Date();
+            const day = days[currentDate.getDay()];
+            const time = currentDate.toLocaleTimeString();
+            document.getElementById('dayTimeResult').textContent = `Today is: ${day}, Time: ${time}`;
+        }
+
+        function findLargest() {
+            const numA = +document.getElementById('numA').value;
+            const numB = +document.getElementById('numB').value;
+            const numC = +document.getElementById('numC').value;
+            document.getElementById('largestResult').textContent = `Largest: ${Math.max(numA, numB, numC)}`;
+        }
+    </script>
+
+</body>
+</html>

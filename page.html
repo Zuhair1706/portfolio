@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TASK BOM</title>
+    <script>
+        function validateinfo() {
+            let pass1 = document.forms["myform"]["pswd"].value;
+            let pass2 = document.forms["myform"]["newpsd"].value;
+            if (pass1 !== pass2) {
+                alert("Passwords do not match. Please try again.");
+                return false; 
+            } else {
+                window.location.href = "https://www.amazon.in";
+                return true; 
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-image: url("https://wallpapercave.com/wp/wp4390828.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task 3</h2>
+
+    <form name="myform" onsubmit="return validateinfo()">
+        <label for="pswd">Enter your password:</label><br>
+        <input type="password" id="pswd" name="pswd"><br>
+        
+        <label for="newpsd">Re-enter your password:</label><br>
+        <input type="password" id="newpsd" name="newpsd"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
+
