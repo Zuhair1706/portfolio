@@ -1,76 +1,75 @@
-<!--
-HTML:
-Hyper Text Markup language 
-
-html is the standard markup language for documents designed to 
-be displayed in a web browser.
-it defines the content and structure of web page 
-it is consists of elements and attributes 
-Elements means open tag and close tag 
-<html> <> open tag 
-
-</html> </>close tag 
-Attributes means open tag only 
-pair(name:value)
-eg:
-<img src=" ">
-
-
-Html tells the browser how to display the content.
-
-
-<html> --root tag 
-<title> --title of the page 
-Hello
-</title>
-<body> ---content/structure/body of the content 
-<h1>Heading tag of size 16px</h1>
-</body>
-</html>
-
-<html>
-<title>
-hello all
-</title>
-<body>
-<p>SLA Welcomes you all</p>
-</body>
-</html>
-
-No of heading tags:
- 
-all are elements only.
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-Heading tag 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="st.css">
 </head>
 <body>
-<h1 style="background-color:red;color:white";>Heading of size one</h1>
-<h2>Heading of size two </h2>
-<h3>Heading of size three</h3>
-<h4>Heading of size four</h4>
-<h5>heading tag five</h5>
-<h6>Heading Six</h6>
-</body>
-</html>
--->
+    <header>
+        <div class="header-container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#personal-details">Personal Details</a></li>
+                    <li><a href="#dsa-knowledge">DSA Knowledge</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<html>
-<title>
-website
-</title>
-<head>
-<style>
-div 
-{
+    <main>
+        <section id="personal-details" class="card">
+            <h2>Personal Details</h2>
+            <p>Hello! I’m <strong>ZUHAIR ALI</strong>, a passionate developer with skills in web development and machine learning.</p>
+            <p><strong>Email:</strong>zuhairali1706@gmail.com</p>
+            <p><strong>YEAR:</strong>2nd Year</p>
+        </section>
 
-}
-</style>
-</head>
-<body>
-<div>
-<h1>Amazon website</h1>
-<h6>Affliated by ISO(9001 to 2024)</h6>
-</div>
+        <section id="dsa-knowledge" class="card">
+            <h2>DSA Knowledge</h2>
+            <div class="grid-container">
+                <div class="grid-item">Arrays</div>
+                <div class="grid-item">Linked Lists</div>
+                <div class="grid-item">Stacks</div>
+                <div class="grid-item">Queues</div>
+                <div class="grid-item">Heap </div>
+                <div class="grid-item">Trees</div>
+                <div class="grid-item">Graphs</div>
+                <div class="grid-item">Dynamic Programming</div>
+            </div>
+            <h2>Programming languages known</h2>
+            <div class="grid-container">
+                <div class="grid-item">C/C++</div>
+                <div class="grid-item">Python</div>
+                <div class="grid-item">Java</div>
+                <div class="grid-item">Javascript</div>
+                <div class="grid-item">HTML</div>
+                <div class="grid-item">CSS</div>
+            </div>
+        </section>
+
+        <section id="courses" class="card">
+            <h2>Courses</h2>
+            <div class="course-list">
+                <div class="course-item">
+                    <h3>Coding 1</h3>
+                    <img src="C:\Users\zuhai\Downloads\WhatsApp Image 2024-09-21 at 07.59.11_74998a55.jpg">
+                </div>
+                <div class="course-item">
+                    <h3>Course 2</h3>
+                    <img src="C:\Users\zuhai\Downloads\WhatsApp Image 2024-09-21 at 07.59.11_41d6dc26.jpg">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ZUHAIR. All Rights Reserved.</p>
+    </footer>
+
+    <script src="u.js"></script>
 </body>
 </html>
