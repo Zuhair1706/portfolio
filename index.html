@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zuhair Ali | AI/ML Portfolio</title>
+  <meta name="description" content="Portfolio of Zuhair Ali, an AI and Machine Learning undergraduate focused on data science, predictive modelling, and scalable ML systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111318;
+      --muted: #5c6470;
+      --line: #dfe4ea;
+      --paper: #f7f8fa;
+      --white: #ffffff;
+      --green: #11634f;
+      --cyan: #0f7c90;
+      --coral: #cc5735;
+      --gold: #9b6a13;
+      --shadow: 0 24px 70px rgba(17, 19, 24, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(17, 19, 24, 0.08);
+      background: rgba(247, 248, 250, 0.88);
+      backdrop-filter: blur(18px);
+    }
+
+    nav {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--green), var(--cyan));
+      box-shadow: 0 12px 30px rgba(17, 99, 79, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    .button {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--ink);
+      border-radius: 8px;
+      padding: 0 16px;
+      background: var(--ink);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 14px;
+      box-shadow: 0 12px 24px rgba(17, 19, 24, 0.14);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(17, 19, 24, 0.18);
+    }
+
+    .button.secondary {
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .hero {
+      position: relative;
+      padding: 78px 0 34px;
+      background:
+        radial-gradient(circle at 18% 24%, rgba(15, 124, 144, 0.12), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #eef3f4 48%, #f8f0e9 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--coral);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-size: clamp(48px, 7.2vw, 96px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 690px;
+      color: #343b45;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 460px;
+      border: 1px solid rgba(17, 19, 24, 0.12);
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--white);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .network {
+      position: absolute;
+      inset: 0;
+      opacity: 0.9;
+    }
+
+    .hero-panel-content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      min-height: 460px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      min-height: 118px;
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .panel-note {
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 26px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 450px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .proof-band {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .proof {
+      min-height: 150px;
+      padding: 24px;
+      background: var(--white);
+    }
+
+    .proof b {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .proof span {
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .projects {
+      background: var(--white);
+      border-block: 1px solid var(--line);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 520px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfd;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 44px rgba(17, 19, 24, 0.1);
+      border-color: rgba(17, 19, 24, 0.18);
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .project-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+    }
+
+    .icon-health {
+      background: var(--coral);
+    }
+
+    .icon-crop {
+      background: var(--green);
+    }
+
+    .icon-brain {
+      background: var(--cyan);
+    }
+
+    .tag {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .project-card ul {
+      padding: 0;
+      margin: 18px 0 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-card li {
+      position: relative;
+      padding-left: 20px;
+      color: #343b45;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .project-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .tech-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .tech-row span,
+    .skill-pill {
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      color: #3b424d;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .profile-block,
+    .skill-block {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      padding: 28px;
+    }
+
+    .profile-block p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .timeline {
+      margin-top: 24px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline-item time {
+      color: var(--green);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .timeline-item b {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item span {
+      color: var(--muted);
+      line-height: 1.45;
+      font-size: 14px;
+    }
+
+    .skill-block {
+      display: grid;
+      gap: 22px;
+    }
+
+    .skill-group h3 {
+      font-size: 15px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .contact {
+      padding-bottom: 44px;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 26px;
+      align-items: center;
+      padding: 34px;
+      border-radius: 8px;
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel h2 {
+      max-width: 720px;
+    }
+
+    .contact-panel p {
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.55;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 10px;
+      min-width: 250px;
+    }
+
+    .contact-links a {
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      padding: 0 14px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      font-weight: 800;
+    }
+
+    footer {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 22px 0 36px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    svg {
+      display: block;
+    }
+
+    @media (max-width: 920px) {
+      .hero-inner,
+      .skills-layout,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid,
+      .proof-band {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-panel,
+      .hero-panel-content {
+        min-height: 390px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav,
+      .hero-inner,
+      .section-inner,
+      footer {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+
+      .project-grid,
+      .proof-band,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        min-height: auto;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+
+      .contact-panel,
+      .profile-block,
+      .skill-block,
+      .project-card {
+        padding: 22px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header>
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Zuhair Ali portfolio home">
+          <span class="brand-mark">ZA</span>
+          <span>Zuhair Ali</span>
+        </a>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="button secondary" href="mailto:peza6219@srmist.edu.in">Email</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">AI and Machine Learning Undergraduate</p>
+            <h1 id="hero-title">Building models that make data useful.</h1>
+            <p class="hero-copy">
+              I am Zuhair Ali, a CSE Artificial Intelligence and Machine Learning student at SRMIST with a 9.49 CGPA. My work spans predictive healthcare analytics, agricultural recommendation systems, and multimodal deep learning on EEG signals.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#projects">View Projects</a>
+              <a class="button secondary" href="https://github.com/Zuhair1706" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="button secondary" href="https://linkedin.com/in/zuhair-ali" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Portfolio highlights">
+            <svg class="network" viewBox="0 0 640 640" aria-hidden="true">
+              <defs>
+                <linearGradient id="mesh" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#1bbf9b" />
+                  <stop offset="0.55" stop-color="#27a7c2" />
+                  <stop offset="1" stop-color="#f0784d" />
+                </linearGradient>
+              </defs>
+              <rect width="640" height="640" fill="#111318" />
+              <g stroke="url(#mesh)" stroke-width="2" opacity="0.42">
+                <path d="M58 502 166 198 306 358 446 126 580 436" />
+                <path d="M96 118 224 286 382 220 538 324" />
+                <path d="M132 452 284 92 428 482 566 174" />
+                <path d="M42 304 184 394 334 146 598 250" />
+              </g>
+              <g fill="url(#mesh)">
+                <circle cx="58" cy="502" r="9" />
+                <circle cx="166" cy="198" r="12" />
+                <circle cx="306" cy="358" r="10" />
+                <circle cx="446" cy="126" r="13" />
+                <circle cx="580" cy="436" r="11" />
+                <circle cx="96" cy="118" r="10" />
+                <circle cx="224" cy="286" r="8" />
+                <circle cx="382" cy="220" r="12" />
+                <circle cx="538" cy="324" r="9" />
+                <circle cx="284" cy="92" r="8" />
+                <circle cx="428" cy="482" r="12" />
+                <circle cx="566" cy="174" r="10" />
+              </g>
+            </svg>
+            <div class="hero-panel-content">
+              <div class="metric-grid">
+                <div class="metric">
+                  <strong>9.49</strong>
+                  <span>CGPA in CSE AI and ML at SRMIST</span>
+                </div>
+                <div class="metric">
+                  <strong>98%</strong>
+                  <span>Random Forest accuracy after tuning for CKD prediction</span>
+                </div>
+                <div class="metric">
+                  <strong>3</strong>
+                  <span>Applied ML domains: healthcare, agriculture, emotion AI</span>
+                </div>
+                <div class="metric">
+                  <strong>API</strong>
+                  <span>FastAPI and Docker deployment experience</span>
+                </div>
+              </div>
+              <p class="panel-note">
+                Focused on the full machine learning path: exploratory analysis, feature engineering, model selection, tuning, and deployment-ready systems.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section aria-labelledby="proof-title">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2 id="proof-title">Strong signals</h2>
+            <p>Academic consistency, practical model building, and a clear habit of turning analysis into working systems.</p>
+          </div>
+          <div class="proof-band">
+            <div class="proof">
+              <b>95.3%</b>
+              <span>Class XII TN State Board, PCMC stream at St. Mary's A.I Hr. Sec. School.</span>
+            </div>
+            <div class="proof">
+              <b>Top 20</b>
+              <span>Most impactful CKD features identified through predictive analytics.</span>
+            </div>
+            <div class="proof">
+              <b>UROP</b>
+              <span>Active research work on multimodal emotion classification using EEG signals.</span>
+            </div>
+            <div class="proof">
+              <b>4</b>
+              <span>Communicative languages: English, Tamil, Hindi, and Gujarati.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2 id="projects-title">Featured projects</h2>
+            <p>Each project highlights a different kind of ML thinking: risk prediction, real-time recommendation, and deep learning research.</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon icon-health" aria-hidden="true">
+                    <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 20s-7-4.5-9.2-9.1C1.3 7.7 3.1 4.5 6.5 4.5c2 0 3.4 1.1 4.2 2.3.8-1.2 2.2-2.3 4.2-2.3 3.4 0 5.2 3.2 3.7 6.4C16.5 15.5 12 20 12 20Z" stroke="currentColor" stroke-width="1.8"/>
+                      <path d="M8 12h2.2l1-2.2 1.8 4.4 1-2.2H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="tag">Healthcare ML</span>
+                </div>
+                <h3>Chronic Kidney Disease Prediction</h3>
+                <p>Predictive analytics project for identifying CKD-related patient outcome patterns and improving model performance.</p>
+                <ul>
+                  <li>Analyzed CKD, heart disease, cholesterol, low eGFR, and hypertension patterns.</li>
+                  <li>Performed correlation analysis, predictive analytics, and survival analysis.</li>
+                  <li>Improved Random Forest accuracy from 96% to 98% through hyperparameter tuning.</li>
+                </ul>
+              </div>
+              <div class="tech-row">
+                <span>Python</span><span>Pandas</span><span>Seaborn</span><span>Scikit-learn</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon icon-crop" aria-hidden="true">
+                    <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 21V9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M12 13c-4.8 0-7.6-2.8-8-7.5C8.8 5.5 11.6 8.2 12 13Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                      <path d="M12 16c4.8 0 7.6-2.8 8-7.5-4.8 0-7.6 2.7-8 7.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="tag">Deployed API</span>
+                </div>
+                <h3>Crop Recommendation Intelligent System</h3>
+                <p>A real-time crop recommendation system using soil, climate, and rainfall inputs to support agricultural decisions.</p>
+                <ul>
+                  <li>Recommended crops from N, P, K, temperature, humidity, pH, and rainfall features.</li>
+                  <li>Applied K-Means clustering and KNN for crop classification and pattern discovery.</li>
+                  <li>Deployed a scalable recommendation API using FastAPI and Docker.</li>
+                </ul>
+              </div>
+              <div class="tech-row">
+                <span>FastAPI</span><span>Docker</span><span>KNN</span><span>K-Means</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div>
+                <div class="project-top">
+                  <div class="project-icon icon-brain" aria-hidden="true">
+                    <svg width="27" height="27" viewBox="0 0 24 24" fill="none">
+                      <path d="M8.5 4.5A3.5 3.5 0 0 0 5 8c0 .5.1 1 .3 1.4A4.2 4.2 0 0 0 7 17.4V19a2 2 0 0 0 3.6 1.2M15.5 4.5A3.5 3.5 0 0 1 19 8c0 .5-.1 1-.3 1.4a4.2 4.2 0 0 1-1.7 8V19a2 2 0 0 1-3.6 1.2M12 5v15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                      <path d="M8 11h2M14 11h2M8.5 15H10M14 15h1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <span class="tag">Research</span>
+                </div>
+                <h3>X-EMO Multimodal Emotion Classification</h3>
+                <p>UROP research project using channel-specific attention mechanisms to classify emotion signals from EEG data.</p>
+                <ul>
+                  <li>Implementing multimodal emotion classification with attention-based deep learning.</li>
+                  <li>Working with EEG signals and channel-specific attention mechanisms.</li>
+                  <li>Using PyTorch and ML workflows to improve classification performance.</li>
+                </ul>
+              </div>
+              <div class="tech-row">
+                <span>PyTorch</span><span>EEG</span><span>Attention</span><span>Deep Learning</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-title">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2 id="skills-title">Technical profile</h2>
+            <p>Comfortable across analysis, modelling, visualization, APIs, and collaborative tooling.</p>
+          </div>
+          <div class="skills-layout">
+            <div class="profile-block">
+              <p>
+                I like projects where data has a practical consequence: diagnosing risk, recommending action, or interpreting human signals. My current foundation is Python-first machine learning, backed by analytics, visualization, and deployment basics.
+              </p>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <time>2027</time>
+                  <div>
+                    <b>B.Tech CSE - AI and ML</b>
+                    <span>SRM Institute of Science and Technology, Kattankulathur. CGPA: 9.49/10.</span>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <time>2025</time>
+                  <div>
+                    <b>Paper Presentation - ICTCS</b>
+                    <span>Conference presentation experience with technical communication exposure.</span>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <time>2023</time>
+                  <div>
+                    <b>Mastering ML Fundamentals</b>
+                    <span>YouTube Certified workshop at SRMIST.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-block">
+              <div class="skill-group">
+                <h3>Programming</h3>
+                <div class="skill-pills">
+                  <span class="skill-pill">Python</span><span class="skill-pill">SQL</span><span class="skill-pill">C</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h3>ML and Data</h3>
+                <div class="skill-pills">
+                  <span class="skill-pill">Data Analytics</span><span class="skill-pill">Data Science</span><span class="skill-pill">Machine Learning</span><span class="skill-pill">Deep Learning</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h3>Libraries</h3>
+                <div class="skill-pills">
+                  <span class="skill-pill">NumPy</span><span class="skill-pill">Pandas</span><span class="skill-pill">Matplotlib</span><span class="skill-pill">Seaborn</span><span class="skill-pill">Scikit-learn</span><span class="skill-pill">PyTorch</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h3>Tools</h3>
+                <div class="skill-pills">
+                  <span class="skill-pill">FastAPI</span><span class="skill-pill">Docker</span><span class="skill-pill">Git</span><span class="skill-pill">GitHub</span><span class="skill-pill">MS Planner</span><span class="skill-pill">MS Office</span>
+                </div>
+              </div>
+              <div class="skill-group">
+                <h3>Certifications</h3>
+                <div class="skill-pills">
+                  <span class="skill-pill">100 Days of Code: Python Pro Bootcamp</span><span class="skill-pill">Python Full Stack Training Program</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="section-inner">
+          <div class="contact-panel">
+            <div>
+              <h2 id="contact-title">Open to AI/ML internships, research collaborations, and data science projects.</h2>
+              <p>Best fit: teams working on applied machine learning, analytics-heavy products, healthcare AI, agriculture tech, or multimodal learning.</p>
+            </div>
+            <div class="contact-links" aria-label="Contact links">
+              <a href="mailto:peza6219@srmist.edu.in"><span>Email</span><span>&nearr;</span></a>
+              <a href="tel:+919360562301"><span>Phone</span><span>&nearr;</span></a>
+              <a href="https://linkedin.com/in/zuhair-ali" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>&nearr;</span></a>
+              <a href="https://github.com/Zuhair1706" target="_blank" rel="noreferrer"><span>GitHub</span><span>&nearr;</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Built from Zuhair Ali's resume. Designed as a direct, recruiter-friendly AI/ML portfolio.
+    </footer>
+  </div>
+</body>
+</html>
